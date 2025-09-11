@@ -1,4 +1,4 @@
-// Day 1: Calculator - core functionality
+// Day 1 + Day 2: Calculator - core functionality
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('.buttons button');
 
@@ -20,7 +20,6 @@ buttons.forEach(button => {
 
     if (button.id === 'equals') {
       try {
-        // Eval for simple learning demo. In production use a parser or safe evaluator.
         const result = eval(currentInput);
         currentInput = String(result);
         updateDisplay(currentInput);
@@ -31,8 +30,30 @@ buttons.forEach(button => {
       return;
     }
 
-    // Append number or operator
     currentInput += v;
     updateDisplay(currentInput);
   });
+});
+
+// ✅ Day 3: Keyboard support
+document.addEventListener('keydown', (e) => {
+  if (/[0-9+\-*/]/.test(e.key)) {
+    currentInput += e.key;
+    updateDisplay(currentInput);
+  } else if (e.key === 'Enter') {
+    try {
+      const result = eval(currentInput);
+      currentInput = String(result);
+      updateDisplay(currentInput);
+    } catch {
+      updateDisplay('Error');
+      currentInput = '';
+    }
+  } else if (e.key === 'Backspace') {
+    currentInput = currentInput.slice(0, -1);
+    updateDisplay(currentInput);
+  } else if (e.key.toLowerCase() === 'c') {
+    currentInput = '';
+    updateDisplay('');
+  }
 });

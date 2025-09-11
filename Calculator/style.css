@@ -63,3 +63,18 @@ button:hover { filter: brightness(1.08); }
 #equals { background: var(--accent); color: #000; font-weight: 600; }
 .op { background: #3b3b3b; }
 .num { background: #2f2f2f; }
+
+/* 📱 Responsive Design */
+@media (max-width: 400px) {
+  .calculator {
+    width: 90%;
+  }
+  #display {
+    font-size: 1rem;
+    height: 40px;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

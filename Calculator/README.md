@@ -9,5 +9,10 @@ A simple calculator built using **HTML, CSS, JavaScript**.
 - Clean responsive UI (desktop-sized)
 - Accessible labels for display
 
+
+## Features (Day 2)
+- Added keyboard input support (numbers, operators, Enter, Backspace, C)
+- Improved responsive design for mobile screens
+
 ## How to Run
 - Open `index.html` in your browser or use Live Server in VS Code.
