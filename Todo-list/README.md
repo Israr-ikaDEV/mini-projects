@@ -7,9 +7,9 @@ This project helps me practice **DOM manipulation** and **event handling**.
 
 ## 🚀 Features (Planned)
 - Add new tasks  
-- Mark tasks as completed  
-- Delete tasks  
-- Save tasks in local storage  
+- Mark tasks as completed ✔  
+- Delete tasks ❌  
+- Save tasks in local storage (coming soon)  
 
 ---
 
@@ -19,3 +19,8 @@ This project helps me practice **DOM manipulation** and **event handling**.
   - Created basic folder structure (`index.html`, `style.css`, `script.js`)  
   - Added input field, Add button, and task list container  
   - Implemented functionality to **add tasks** dynamically  
+
+- **Day 2** → Task Actions  
+  - Added **✔ checkmark button** at start of each task to mark as completed  
+  - Added **❌ delete button** at end of each task to remove it  
+  - Styled buttons with hover effects and added strikethrough effect for completed tasks

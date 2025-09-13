@@ -53,4 +53,47 @@ li {
   padding: 10px;
   border-radius: 5px;
   text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ✅ Completed task style */
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* ❌ Delete button */
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.complete-btn {
+  background: #fff;
+  border: 2px solid #22c55e;
+  color: #22c55e;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.complete-btn.completed,
+.complete-btn:active {
+  background: #22c55e !important;
+  color: #fff !important;
+}
+
+.complete-btn:hover {
+  background: #e0fbe3;
+  color: #16a34a;
 }
