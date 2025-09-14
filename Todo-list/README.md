@@ -24,3 +24,8 @@ This project helps me practice **DOM manipulation** and **event handling**.
   - Added **✔ checkmark button** at start of each task to mark as completed  
   - Added **❌ delete button** at end of each task to remove it  
   - Styled buttons with hover effects and added strikethrough effect for completed tasks
+
+- **Day 3** → Local Storage
+  - Implemented **saving tasks** in local storage
+  - Implemented **loading tasks from local storage** when page refreshes
+  - Ensured completed state of tasks is also stored
