@@ -18,3 +18,9 @@ This project helps me practice **DOM manipulation**, **event handling**, and **g
   - Created folder structure (`index.html`, `style.css`, `script.js`)  
   - Added basic UI with 3 choice buttons (Rock, Paper, Scissors)  
   - Placeholder result message added
+
+- **Day 2** → Game Logic  
+  - Added **computer random choice generator**  
+  - Implemented **game rules** (Win / Lose / Draw)  
+  - Displayed both **player and computer choices**  
+  - Updated result section with styled outcome message
