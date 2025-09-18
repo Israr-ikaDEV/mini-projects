@@ -34,8 +34,31 @@ function play(playerChoice) {
     <h2>${result}</h2>
   `;
 
-  // Update scoreboard
+  updateScoreboard();
+}
+
+function updateScoreboard() {
   document.getElementById("playerScore").textContent = playerScore;
   document.getElementById("computerScore").textContent = computerScore;
   document.getElementById("draws").textContent = draws;
+
+  const leaderMsg = document.getElementById("leaderMsg");
+  if (playerScore > computerScore) {
+    leaderMsg.textContent = "You are leading! 🏆";
+    leaderMsg.style.color = "#16a34a"; // green
+  } else if (computerScore > playerScore) {
+    leaderMsg.textContent = "Computer is leading! 🤖";
+    leaderMsg.style.color = "#dc2626"; // red
+  } else {
+    leaderMsg.textContent = "Game is tied ⚖️";
+    leaderMsg.style.color = "#2563eb"; // blue
+  }
+}
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  draws = 0;
+  document.getElementById("result").innerHTML = `<p>Game reset! Make your move!</p>`;
+  updateScoreboard();
 }
