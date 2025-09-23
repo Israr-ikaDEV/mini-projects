@@ -1,5 +1,3 @@
-// travel_recommendation.js
-
 let travelData = [];
 
 // Load data from JSON
@@ -7,9 +5,9 @@ fetch("travel_recommendation_api.json")
   .then(response => response.json())
   .then(data => {
     travelData = data;
-    console.log("Travel data loaded:", travelData); // ✅ check in console
+    console.log("✅ Travel data loaded:", travelData);
   })
-  .catch(error => console.error("Error loading data:", error));
+  .catch(error => console.error("❌ Error loading data:", error));
 
 // Function to display results
 function displayResults(results) {
@@ -17,7 +15,7 @@ function displayResults(results) {
   container.innerHTML = ""; // clear old results
 
   if (results.length === 0) {
-    container.innerHTML = `<p>No results found. Try "beach", "temple", "mountain", "city", "adventure" or a country name.</p>`;
+    container.innerHTML = `<p>No results found. Try <b>beach</b>, <b>temple</b>, <b>mountain</b>, <b>city</b>, <b>adventure</b> or a <b>country name</b>.</p>`;
     return;
   }
 
@@ -34,16 +32,20 @@ function displayResults(results) {
     container.appendChild(card);
   });
 
-  // Smooth scroll to results
+  // Smooth scroll to results section
   document.getElementById("results").scrollIntoView({ behavior: "smooth" });
 }
 
 // Function to search recommendations
 function searchRecommendations() {
-  const input = document.getElementById("searchInput").value.trim().toLowerCase();
+  // ✅ Check both inputs (navbar + results section)
+  const input =
+    document.getElementById("searchInput").value.trim().toLowerCase() ||
+    document.getElementById("searchInput2")?.value.trim().toLowerCase();
+
   let results = [];
 
-  if (input === "") {
+  if (!input) {
     alert("Please enter a keyword (e.g., beach, temple, mountain, city, adventure, Pakistan)");
     return;
   }
@@ -69,10 +71,21 @@ function searchRecommendations() {
 
 // ✅ Function to clear results
 function clearResults() {
-  document.getElementById("searchInput").value = ""; // clear search bar
-  document.getElementById("recommendations").innerHTML = ""; // clear results
+  document.getElementById("searchInput").value = ""; // clear navbar input
+  if (document.getElementById("searchInput2")) {
+    document.getElementById("searchInput2").value = ""; // clear results input
+  }
+  document.getElementById("recommendations").innerHTML = ""; // clear results container
 }
 
-// Event listeners
+// Event listeners for navbar search
 document.getElementById("searchBtn").addEventListener("click", searchRecommendations);
 document.getElementById("clearBtn").addEventListener("click", clearResults);
+
+// ✅ Event listeners for results section search (if present)
+if (document.getElementById("searchBtn2")) {
+  document.getElementById("searchBtn2").addEventListener("click", searchRecommendations);
+}
+if (document.getElementById("clearBtn2")) {
+  document.getElementById("clearBtn2").addEventListener("click", clearResults);
+}
