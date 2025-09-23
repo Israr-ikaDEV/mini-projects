@@ -1,49 +1,25 @@
-// Using Open-Meteo + Geocoding from a free service (like Nominatim or Geoapify)
+ function fetchPrayerTimes() {
+      const city = document.getElementById('city').value;
+      const country = document.getElementById('country').value;
+      const resultDiv = document.getElementById('fetch-result');
 
-// Helper to fetch coordinates for a city
-async function getCoordinates(cityName) {
-  const response = await fetch(
-    `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1`
-  );
-  const data = await response.json();
-  if (!data.results || data.results.length === 0) {
-    throw new Error("City not found");
-  }
-  const { latitude, longitude, country, name } = data.results[0];
-  return { latitude, longitude, country, name };
-}
+      if (!city || !country) {
+        resultDiv.innerText = 'Please enter both city and country!';
+        return;
+      }
 
-document.getElementById("searchBtn").addEventListener("click", async function () {
-  const cityInput = document.getElementById("cityInput");
-  const city = cityInput.value.trim();
-  const resultDiv = document.getElementById("result");
+      resultDiv.innerText = 'Loading...';
 
-  if (!city) {
-    resultDiv.innerHTML = "<p>⚠️ Please enter a city name!</p>";
-    return;
-  }
-
-  resultDiv.innerHTML = `<p>⏳ Getting weather for <b>${city}</b>...</p>`;
-
-  try {
-    const { latitude, longitude, country, name } = await getCoordinates(city);
-    // fetch weather
-    const weatherResponse = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
-    );
-    const weatherData = await weatherResponse.json();
-    if (!weatherData.current_weather) {
-      throw new Error("Weather data not available");
+      axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=2`)
+        .then(response => {
+          const timings = response.data.data.timings;
+          let html = `<h3>Prayer Times for ${city}, ${country}</h3>`;
+          for (const [prayer, time] of Object.entries(timings)) {
+            html += `<strong>${prayer}:</strong> ${time}<br>`;
+          }
+          resultDiv.innerHTML = html;
+        })
+        .catch(error => {
+          resultDiv.innerText = 'Error: Invalid city/country or network issue.';
+        });
     }
-    const cw = weatherData.current_weather;
-    resultDiv.innerHTML = `
-      <h2>${name}, ${country}</h2>
-      <p>🌡️ Temperature: <b>${cw.temperature} °C</b></p>
-      <p>💨 Wind Speed: <b>${cw.windspeed} m/s</b></p>
-      <p>📅 Time: <b>${cw.time}</b></p>
-    `;
-  } catch (error) {
-    resultDiv.innerHTML = `<p style="color:red;">❌ ${error.message}</p>`;
-    console.error(error);
-  }
-});

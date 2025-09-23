@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WanderWise Travel Advisor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+    }
+    .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .search-bar {
+      display: flex;
+      gap: 5px;
+    }
+    .search-bar input {
+      padding: 5px;
+    }
+    .search-bar button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+    }
+    #home {
+      background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+    }
+    #about {
+      background: url("https://images.unsplash.com/photo-1561484930-2d4b3b1f3f99?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+    }
+    #contact {
+      background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+    }
+    #results {
+      background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+    .team-member {
+      margin: 8px 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+    button {
+      padding: 10px;
+      font-size: 18px;
+      background: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e65c00;
+    }
+    .result-card {
+      background: white;
+      color: black;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: left;
+    }
+    .result-card img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=80&q=60" alt="Logo">
+      <span>WanderWise</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#results">Recommendations</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search destinations...">
+      <button id="searchBtn">Search</button>
+      <button id="clearBtn">Reset</button>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="overlay">
+      <h1>Welcome to WanderWise</h1>
+      <p>Discover breathtaking destinations, explore diverse cultures, and find the perfect place for your next adventure.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="overlay">
+      <h1>About WanderWise</h1>
+      <p>WanderWise Travel Advisor helps travelers explore new destinations with smart recommendations and cultural insights.</p>
+      <h2>Meet Our Team</h2>
+      <div class="team-member"><strong>Israr Khan</strong> - Frontend Developer</div>
+      <div class="team-member"><strong>Sarah Ahmed</strong> - UX Designer</div>
+      <div class="team-member"><strong>Ali Raza</strong> - Backend Developer</div>
+      <div class="team-member"><strong>Ayesha Khan</strong> - Project Manager</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="overlay">
+      <h1>Contact Us</h1>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Write your message here..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Recommendation Section -->
+  <section id="results">
+    <div class="overlay" style="width:100%">
+      <h1>Travel Recommendations</h1>
+      <div id="recommendations"></div>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script src="travel_recommendation.js"></script>
+</body>
+</html>

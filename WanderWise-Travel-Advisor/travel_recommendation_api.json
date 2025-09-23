@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Coral Sands Beach",
+    "country": "Maldives",
+    "type": "Beach",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "description": "White sand, clear waters and a serene environment perfect for snorkeling and sunset walks."
+  },
+  {
+    "name": "Sunset Cove Beach",
+    "country": "Thailand",
+    "type": "Beach",
+    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
+    "description": "A lively beach with local vendors, paddle boarding and a vibrant evening market nearby."
+  },
+  {
+    "name": "Bondi Beach",
+    "country": "Australia",
+    "type": "Beach",
+    "imageUrl": "https://images.unsplash.com/photo-1526481280690-3bfa7568e8f8?auto=format&fit=crop&w=1200&q=80",
+    "description": "World-famous beach known for surfing, golden sand, and vibrant seaside cafes."
+  },
+  {
+    "name": "Golden Temple",
+    "country": "India",
+    "type": "Temple",
+    "imageUrl": "https://images.unsplash.com/photo-1561484930-2d4b3b1f3f99?auto=format&fit=crop&w=1200&q=80",
+    "description": "Historic temple known for its golden architecture and community kitchen."
+  },
+  {
+    "name": "Ancient Hill Temple",
+    "country": "Japan",
+    "type": "Temple",
+    "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+    "description": "A quiet, centuries-old temple nestled on a forested hill. Great for meditation and nature walks."
+  },
+  {
+    "name": "Angkor Wat",
+    "country": "Cambodia",
+    "type": "Temple",
+    "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
+    "description": "One of the largest religious monuments in the world, known for its ancient Khmer architecture."
+  },
+  {
+    "name": "Mount Fuji",
+    "country": "Japan",
+    "type": "Mountain",
+    "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1200&q=80",
+    "description": "Japan’s tallest peak, an iconic snow-capped mountain popular with climbers and photographers."
+  },
+  {
+    "name": "Swiss Alps",
+    "country": "Switzerland",
+    "type": "Mountain",
+    "imageUrl": "https://images.unsplash.com/photo-1508264165352-258859e62245?auto=format&fit=crop&w=1200&q=80",
+    "description": "Famous for skiing, hiking, and breathtaking alpine scenery."
+  },
+  {
+    "name": "Rocky Mountains",
+    "country": "USA",
+    "type": "Mountain",
+    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
+    "description": "A vast mountain range offering national parks, wildlife, and outdoor adventure."
+  },
+  {
+    "name": "Karachi Highlights",
+    "country": "Pakistan",
+    "type": "City",
+    "imageUrl": "https://images.unsplash.com/photo-1543076447-215ad9ba6927?auto=format&fit=crop&w=1200&q=80",
+    "description": "Vibrant port city with markets, historical sites and seaside promenades."
+  },
+  {
+    "name": "Lisbon Coastal",
+    "country": "Portugal",
+    "type": "City",
+    "imageUrl": "https://images.unsplash.com/photo-1505765059092-7f21ebd5d3fe?auto=format&fit=crop&w=1200&q=80",
+    "description": "Picturesque coastal city with cliffs, historic neighborhoods and fresh seafood."
+  },
+  {
+    "name": "Santorini Escape",
+    "country": "Greece",
+    "type": "City",
+    "imageUrl": "https://images.unsplash.com/photo-1505731132164-cca7f1f1b8f3?auto=format&fit=crop&w=1200&q=80",
+    "description": "Beautiful island city with whitewashed houses, blue-domed churches, and stunning sunsets."
+  },
+  {
+    "name": "New York City",
+    "country": "USA",
+    "type": "City",
+    "imageUrl": "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=80",
+    "description": "The city that never sleeps, home to Times Square, Central Park, and Broadway shows."
+  },
+  {
+    "name": "Amazon Rainforest",
+    "country": "Brazil",
+    "type": "Adventure",
+    "imageUrl": "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1200&q=80",
+    "description": "The largest rainforest in the world, full of wildlife and adventure opportunities."
+  },
+  {
+    "name": "Sahara Desert Trek",
+    "country": "Morocco",
+    "type": "Adventure",
+    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80",
+    "description": "Camel rides, golden dunes, and starry desert nights in the world’s largest hot desert."
+  }
+]
