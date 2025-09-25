@@ -26,6 +26,7 @@ function createTaskElement(taskText, isCompleted = false) {
   // Task text
   const span = document.createElement("span");
   span.textContent = taskText;
+  span.classList.add("task-text"); // 👈 added class for ellipsis
   if (isCompleted) span.classList.add("completed");
 
   // ❌ Delete button

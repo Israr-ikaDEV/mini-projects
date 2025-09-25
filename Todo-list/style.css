@@ -78,6 +78,15 @@ li:hover {
   background: #f3f3f3;
 }
 
+/* Task text with ellipsis */
+.task-text {
+  flex: 1; /* takes available space */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 8px; /* spacing from buttons */
+}
+
 /* ✅ Completed task style */
 .completed {
   text-decoration: line-through;
